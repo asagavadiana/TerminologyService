@@ -6,3 +6,5 @@ urlpatterns = [
     path('refbooks/<int:pk>/elements/', RefbookElementListView.as_view(), name='refbook-element-list'),
     path('refbooks/<int:pk>/check_element/', ValidateRefbookElementView.as_view(), name='refbook-element-validate'),
 ]
+
+

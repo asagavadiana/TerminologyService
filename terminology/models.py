@@ -5,6 +5,10 @@ class Refbook(models.Model):
     name = models.CharField(max_length=300)
     description = models.TextField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Справочник'
+        verbose_name_plural = 'Справочники'
+
     def __str__(self):
         return self.name
 
@@ -15,6 +19,8 @@ class RefbookVersion(models.Model):
 
     class Meta:
         unique_together = ('refbook', 'version')
+        verbose_name = 'Версия справочника'
+        verbose_name_plural = 'Версии справочников'
 
     def __str__(self):
         return f'{self.refbook.name} - {self.version}'
@@ -26,6 +32,8 @@ class RefbookElement(models.Model):
 
     class Meta:
         unique_together = ('refbook_version', 'code')
+        verbose_name = 'Элемент справочника'
+        verbose_name_plural = 'Элементы справочников'
 
     def __str__(self):
         return self.value
